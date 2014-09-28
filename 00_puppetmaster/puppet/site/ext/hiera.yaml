@@ -1,0 +1,11 @@
+---
+:backends:
+  - yaml
+
+:hierarchy:
+  - "nodes/%{::fqdn}"
+  - "locations/%{::location}"
+  - "common"
+
+:yaml:
+  :datadir: "/etc/puppet/modules/site/data"

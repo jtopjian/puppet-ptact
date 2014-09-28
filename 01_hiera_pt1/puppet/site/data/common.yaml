@@ -1,0 +1,26 @@
+puppet::package_ensure: '3.6.2-1puppetlabs1'
+puppet::settings:
+  server: 'puppet.example.com'
+  parser: 'future'
+  evaluator: 'current'
+  ordering: 'manifest'
+  pluginsync: true
+  logdir: '/var/log/puppet'
+  vardir: '/var/lib/puppet'
+  ssldir: '/var/lib/puppet/ssl'
+  rundir: '/var/run/puppet'
+  manifest: '/etc/puppet/modules/site/manifests/site.pp'
+
+puppet::agent::settings:
+  certname: "%{::fqdn}"
+  show_diff: true
+  splay: false
+  configtimeout: 360
+  usecacheonfailure: true
+  report: true
+
+site::profiles::ssh::keys:
+  - 'user1@foobar.com': 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCeLaL7CApzw1ZLH9xxbaQwqOpni6qQUsaqfHOAerOaQWFwWCEfZdWb/+HpeukqPuTQZ0MRSq4tyL0BATTnB7EBL/bk+HFYb3fWQ6V4qYk83+MnMCReiYvKtCCW6DMMETMwJOswjLR46XOATNylmAGQNiW2QGhxIVaMBbp+l3fE6HgWhrNH6H6OIdxELj1Vlapc7UQQmYlw0h6BWWGRCvrIqvYZ+LLzy2Dgt07lc/8KLvby7j5KGOhZL8XFQEKOcgtVM+flKIikW/93k4TqFvJrsFkEr/BrmCeuK6sLqANDZdFC8r9ir/3cFsVKPMblE/jO1teI8Vj3e7mchfkePlA/'
+
+#ssh::keys:
+#  - 'user1@foobar.com': 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCeLaL7CApzw1ZLH9xxbaQwqOpni6qQUsaqfHOAerOaQWFwWCEfZdWb/+HpeukqPuTQZ0MRSq4tyL0BATTnB7EBL/bk+HFYb3fWQ6V4qYk83+MnMCReiYvKtCCW6DMMETMwJOswjLR46XOATNylmAGQNiW2QGhxIVaMBbp+l3fE6HgWhrNH6H6OIdxELj1Vlapc7UQQmYlw0h6BWWGRCvrIqvYZ+LLzy2Dgt07lc/8KLvby7j5KGOhZL8XFQEKOcgtVM+flKIikW/93k4TqFvJrsFkEr/BrmCeuK6sLqANDZdFC8r9ir/3cFsVKPMblE/jO1teI8Vj3e7mchfkePlA/'

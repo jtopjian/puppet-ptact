@@ -1,0 +1,25 @@
+forge 'http://forge.puppetlabs.com'
+
+mod 'puppet',
+  :git => 'https://github.com/jtopjian/puppet-puppet'
+
+mod 'apache',
+  :git => 'https://github.com/puppetlabs/puppetlabs-apache'
+
+mod 'concat',
+  :git => 'https://github.com/puppetlabs/puppetlabs-concat'
+
+mod 'puppetdb',
+  :git => 'https://github.com/puppetlabs/puppetlabs-puppetdb'
+
+mod 'postgresql',
+  :git => 'https://github.com/puppetlabs/puppetlabs-postgresql'
+
+mod 'firewall',
+  :git => 'https://github.com/puppetlabs/puppetlabs-firewall'
+
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib'
+
+mod 'inifile',
+  :git => 'https://github.com/puppetlabs/puppetlabs-inifile'

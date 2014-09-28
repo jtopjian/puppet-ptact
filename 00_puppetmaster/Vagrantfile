@@ -1,7 +1,7 @@
 require 'vagrant-lxc'
 
 servers = [
-  'puppet', 'node-1', 'node-2'
+  'puppet'
 ]
 
 ubuntu_1404 = "https://swift.cloud.cybera.ca:8080/v1/AUTH_9aa5f9f66b4b417d84d778a23acdf45b/public/vagrant-lxc-trusty-amd64.box"
@@ -21,18 +21,6 @@ Vagrant.configure('2') do |config|
         s.vm.provider :lxc do |lxc|
           lxc.container_name = server
           lxc.customize 'network.ipv4', '192.168.255.2/24'
-        end
-      when 'node-1'
-        shell_script = 'bootstraps/node-1.sh'
-        s.vm.provider :lxc do |lxc|
-          lxc.container_name = server
-          lxc.customize 'network.ipv4', '192.168.255.11/24'
-        end
-      when 'node-2'
-        shell_script = 'bootstraps/node-2.sh'
-        s.vm.provider :lxc do |lxc|
-          lxc.container_name = server
-          lxc.customize 'network.ipv4', '192.168.255.12/24'
         end
       end
 
